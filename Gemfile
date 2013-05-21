@@ -52,5 +52,10 @@ group :test, :development do
   gem 'launchy'
   gem 'rspec-rails', '~> 2.0'
   gem 'ZenTest'
+  gem 'sqlite3' # use SQLite only in development and testing
+end
+
+group :production do
+  gem 'pg' # use PostgreSQL in production (Heroku)
 end
 
