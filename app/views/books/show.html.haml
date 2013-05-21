@@ -1,0 +1,20 @@
+-# in app/views/movies/show.html.haml
+ 
+%h2 Details about #{@book.title}
+ 
+%ul#details
+  %li
+    Author:
+    = @book.author
+  %li
+    Rating:
+    = @book.rating
+  %li
+    Released on:
+    = @book.release_date.strftime("%B %d, %Y")
+ 
+%h3 Description:
+ 
+%p#description= @book.description
+ 
+= link_to 'Back to book list', books_path
