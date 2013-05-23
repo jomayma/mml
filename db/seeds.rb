@@ -2,8 +2,8 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 more_books = [
-  {:title => 'The Hobbit', :author => 'J.R.R. Tolkien', :rating => 'G', :release_date => '1930'},
-  {:title => 'El Ingenioso hidalgo Don Quijote de la Mancha', :author => 'Miguel de Cervantes Saavedra', :rating => 'R', :release_date => '1605'},
+  {:title => 'The Hobbit', :author => 'J.R.R. Tolkien', :rating => 'G', :release_date => '01/01/1930', :description => 'The story of a hobbit called Bilbo Bolson.'},
+  {:title => 'El Ingenioso hidalgo Don Quijote de la Mancha', :author => 'Miguel de Cervantes Saavedra', :rating => 'R', :release_date => '01/01/1605', :description => 'Cuenta la historia del famoso hidalgo Don Quijote de la Mancha, y de su fiel escudero Sancho Panza.'},
   {:title => 'Luna Nueva', :author => 'Stepheny Meyer', :rating => 'G', :release_date => '01/01/2009', :description => 'A love story about vampires.'}
 ]
 # NOTE: the following line temporarily allows mass assignment
