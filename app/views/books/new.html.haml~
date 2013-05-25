@@ -5,6 +5,9 @@
   = label :book, :title, 'Title'
   = text_field :book, 'title'
 
+  = label :book, :author, 'Author'
+  = text_field :book, 'author'
+
   = label :book, :rating, 'Rating'
   = select :book, :rating, ['G','PG','PG-13','R','NC-17']
 
