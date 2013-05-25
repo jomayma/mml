@@ -7,4 +7,7 @@ class BooksController < ApplicationController
     @book = Book.find(id) # look up book by unique ID
     # will render app/views/books/show.html.haml by default
   end
+  def new
+    
+  end
 end

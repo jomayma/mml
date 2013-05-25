@@ -15,7 +15,7 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-    when /^the MML home page$/
+    when /^the books home page$/
       '/books'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
