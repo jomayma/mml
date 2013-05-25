@@ -133,6 +133,15 @@ body {
     font-size: 13px;
     text-align: center;
 }
+table {
+    text-align: left;
+    border-collapse: collapse;
+}
+th { padding: 3px; }
+td { padding: 3px; }
+thead { background: #FFB84D }
+tbody tr:nth-child(odd) { background: #FFCC80; }
+tbody tr:nth-child(even) { background: #FFD699; }
 a {
     color: #763600;
     cursor: pointer;
