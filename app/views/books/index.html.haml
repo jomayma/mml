@@ -17,3 +17,5 @@
         %td= book.rating
         %td= book.release_date
         %td= link_to "More about #{book.title}", book_path(book)
+  
+%p= link_to "Add new book", new_book_path

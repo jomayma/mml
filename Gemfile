@@ -53,6 +53,7 @@ group :test, :development do
   gem 'rspec-rails', '~> 2.0'
   gem 'ZenTest'
   gem 'sqlite3' # use SQLite only in development and testing
+  gem 'json', '~> 1.7.7'
 end
 
 group :production do
