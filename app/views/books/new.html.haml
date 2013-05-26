@@ -1,0 +1,25 @@
+%h1 Add New Book
+
+= form_tag(books_path, {:class => 'form_book'})  do
+
+  = label :book, :title, 'Title'
+  = text_field :book, 'title'
+  %br
+  
+  = label :book, :author, 'Author'
+  = text_field :book, 'author'
+  %br
+  
+  = label :book, :rating, 'Rating'
+  = select :book, :rating, ['G','PG','PG-13','R','NC-17']
+  %br
+  
+  = label :book, :release_date, 'Released On'
+  = date_select :book, :release_date
+  %br
+  
+  = label :book, :description, 'Description'
+  = text_area :book, 'description'
+  %br
+  
+  = submit_tag 'Save Changes'
