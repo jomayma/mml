@@ -133,15 +133,64 @@ body {
     font-size: 13px;
     text-align: center;
 }
+
 table {
     text-align: left;
     border-collapse: collapse;
 }
-th { padding: 3px; }
-td { padding: 3px; }
-thead { background: #FFB84D }
+th, td { padding: 3px; }
+thead, tfoot { 
+	background: #715453;
+	color: #EBBF7F;
+	text-align: center;
+}
 tbody tr:nth-child(odd) { background: #FFCC80; }
 tbody tr:nth-child(even) { background: #FFD699; }
+
+.table_results {
+    width: 100%;
+}
+.crud_links a:link{
+    font-size: 15px;
+    font-weight: bold;
+}
+.crud_links a:visited {
+    color: #EBBF7F;
+}
+.crud_links a:hover {
+    color: #FFE11F;
+    font-size: 15px;
+}
+
+.form_book{
+    width: 340px;
+    text-align: justify;
+}
+.form_book label{
+    width: 100px;
+position: relative;
+clear: left;
+float: left;
+width: 10em;
+margin-right: 2px;
+text-align: right;
+}
+.form_book textarea{
+    width: 211px;
+    height: 65px;
+}
+.form_book select{
+    text-align: justify;
+}
+.form_book input[type='text']{
+    width: 190px;
+}
+.form_book input[type='submit']{
+    text-align: center;
+    float: right;
+    width: 100px;
+}
+
 a {
     color: #763600;
     cursor: pointer;
@@ -149,6 +198,19 @@ a {
 a img {
     border: 0 none;
 }
+
+a:link, a:visited
+{
+color: #1b57b1;
+text-decoration: none;
+font-weight: normal;
+}
+
+a:hover
+{
+text-decoration: underline;
+}
+
 h2 {
     font-size: 24px;
     font-weight: normal;
