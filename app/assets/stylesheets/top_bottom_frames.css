@@ -40,18 +40,6 @@ border-bottom-style: none;
 border-left-style: none;
 }
 
-a:link, a:visited
-{
-color: #1b57b1;
-text-decoration: none;
-font-weight: normal;
-}
-
-a:hover
-{
-text-decoration: underline;
-}
-
 #framecontentLeft{
 	position: absolute;
 	top: 0;

@@ -1,21 +1,23 @@
 -#  This file is app/views/movies/index.html.haml
 %h2 All Books
  
-%table#books
+%table#books{:class => "table_results"}
   %thead
     %tr
       %th Book Title
       %th Book Author
       %th Rating
-      %th Release Date
+      %th Release Year
       %th More Info
+  %tfoot
+    %tr
+      %td{:class => "crud_links", :colspan => 5}= link_to "Add New Book", new_book_path
   %tbody
     - @books.each do |book|
       %tr
         %td= book.title
         %td= book.author
         %td= book.rating
-        %td= book.release_date
+        %td= book.release_date ? book.release_date.strftime("%Y") : "n.a."
         %td= link_to "More about #{book.title}", book_path(book)
   
-%p= link_to "Add new book", new_book_path
