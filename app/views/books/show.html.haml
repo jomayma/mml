@@ -6,15 +6,9 @@
   %li
     Author:
     = @book.author
-  %li
-    Rating:
-    = @book.rating
-  %li
-    Released on:
-    = @book.release_date.strftime("%B %d, %Y")
  
-%h3 Description:
+%h3 Summary:
  
-%p#description= @book.description
+%p#description= @book.summary
  
 = link_to 'Back to book list', books_path

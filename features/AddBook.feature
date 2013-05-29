@@ -5,7 +5,6 @@ Scenario: Add a book
   When I follow "Add New Book"
   Then I should be on the Create New Book page
   When I fill in "Title" with "The Hobbit"
-  And I select "PG-13" from "Rating"
   And I press "Save Changes"
   Then I should be on the books home page
   And I should see "The Hobbit"
