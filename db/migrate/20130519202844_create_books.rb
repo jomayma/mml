@@ -3,9 +3,8 @@ class CreateBooks < ActiveRecord::Migration
     create_table 'books' do |t|
       t.string 'title'
       t.string 'author'
-      t.string 'rating'
-      t.text 'description'
-      t.datetime 'release_date'
+      t.text 'summary'
+      
       # Add fields that let Rails automatically keep track
       # of when books are added or modified:
       t.timestamps
@@ -13,6 +12,6 @@ class CreateBooks < ActiveRecord::Migration
   end
 
   def down
-      drop_table 'books' # deletes the whole table and all its data!
+    drop_table 'books' # deletes the whole table and all its data!
   end
 end

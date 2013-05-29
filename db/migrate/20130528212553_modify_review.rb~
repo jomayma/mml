@@ -1,0 +1,15 @@
+class ModifyReview < ActiveRecord::Migration
+  def up
+    #add_column 'moviegoers', 'first_name', :string
+    remove_column 'reviews', 'reader_id'
+    remove_column 'reviews', 'book_id'
+
+    modify_table 'reviews' do |t|
+      t.references 'readers'
+      t.references 'books'
+    end
+  end
+
+  def down
+  end
+end

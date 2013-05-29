@@ -6,8 +6,6 @@
     %tr
       %th Book Title
       %th Book Author
-      %th Rating
-      %th Release Year
       %th More Info
   %tfoot
     %tr
@@ -17,8 +15,5 @@
       %tr
         %td= book.title
         %td= book.author
-        %td= book.rating
-        :value => post ? post.title : ""
-        %td= book.release_date ? book.release_date.strftime("%Y") : "n.a."
         %td= link_to "More about #{book.title}", book_path(book)
   
