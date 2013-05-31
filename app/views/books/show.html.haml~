@@ -6,15 +6,16 @@
   %li
     Author:
     = @book.author
-  %li
-    Rating:
-    = @book.rating
-  %li
-    Released on:
-    = @book.release_date.strftime("%B %d, %Y")
  
 %h3 Summary:
  
 %p#description= @book.summary
+
+= form_tag(reviews_path, {:class => 'form_review'})  do
+
+  = label :review, :review, 'Review (optional)'
+  = text_field :review, 'review'
+  
+  = submit_tag 'Save Changes'
  
 = link_to 'Back to book list', books_path

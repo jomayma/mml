@@ -10,5 +10,12 @@
 %h3 Summary:
  
 %p#description= @book.summary
+
+= form_tag(reviews_path, {:class => 'form_review'})  do
+
+  = label :review, :review, 'Review (optional)'
+  = text_field :review, 'review'
+  
+  = submit_tag 'Add review'
  
 = link_to 'Back to book list', books_path
