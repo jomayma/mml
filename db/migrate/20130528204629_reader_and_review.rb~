@@ -1,9 +1,9 @@
 class ReaderAndReview < ActiveRecord::Migration
   def up    
     create_table 'readers' do |t|
-      t.string 'name'
-      t.string 'email'
-      t.string 'username'     
+      t.string   'name'
+      t.provider 'string'
+      t.uid      'string'
       
       # Add fields that let Rails automatically keep track
       # of when readers are added or modified:
@@ -13,7 +13,7 @@ class ReaderAndReview < ActiveRecord::Migration
     create_table 'reviews' do |t|  
       t.integer    'stars'
       t.text       'comments'
-      t.string     'tags' #{has, wish, read, sell}
+      t.string     'tags' #{fantasy, has, wish, read, sell ...}
       t.references 'reader'
       t.references 'book'
 

@@ -13,8 +13,9 @@
   
 = form_tag book_reviews_path(@book) do
   %label How many stars?
-  = select_tag 'review[rating]', options_for_select(1..5)
+  = select_tag 'review[stars]', options_for_select(1..5)
   %br
+  = label :review, :comments, 'Comments'
   = text_area_tag 'review[comments]', ''
   %br
   = submit_tag 'Add review'
