@@ -30,13 +30,13 @@ ActiveRecord::Schema.define(:version => 20130528204629) do
   end
 
   create_table "reviews", :force => true do |t|
-    t.string   "relation_with"
-    t.string   "rating"
-    t.text     "review"
-    t.integer  "readers_id"
-    t.integer  "books_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.integer  "stars"
+    t.text     "comments"
+    t.string   "tags"
+    t.integer  "reader_id"
+    t.integer  "book_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
