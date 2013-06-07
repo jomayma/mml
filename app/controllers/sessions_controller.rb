@@ -15,16 +15,18 @@ class SessionsController < ApplicationController
   end
   
   def show
-    logger.debug "jmm - begin SessionsController.create"
+    logger.debug "jmm - begin SessionsController.create - client | #{client}"
     if session['access_token'] && session['access_secret']
       @user = client.user(include_entities: true)
       logger.debug "jmm - @user | #{@user}"
+      logger.debug "jmm - @user.name | #{@user.name}"
     else
-      redirect_to failure_path
+      #redirect_to failure_path #failure must be implemented
+      redirect_to books_path
       logger.debug "jmm - login failure"
     end
     
-    redirect_to books_path
+    #redirect_to books_path #the show view is not working right now
   end
   
   def error
