@@ -1,23 +1,9 @@
 -#  This file is app/views/home/index.html.haml
-#container
-  #header
-    #wrapper
-      %h1
-        %a{:href => "/"} MML
-        %ul.nav
-          %li
-            %a{:href => "/books"} Books
-          %li
-            %a{:href => "/reviews", :class "highlight"} Reviews
-        %ul.nav_minor
-          %li
-            %a{:href => "/login"} Login
-#content_index.wrapper
   %h2.h_tagline Your Multi Media Library, everywhere you are.
-  %ul.apps_computer
+  %ul#apps_computer
     %li.highlight
       %a{:href => "/in_progress"} Add to Firefox
-  %ul.apps_mobile
+  %ul#apps_mobile
     %li.highlight
       %a{:href => "/in_progress"} Add to iPhone/iPod
 #footer_index
@@ -31,7 +17,7 @@
     .step.step3
       %h3 Save
       %p Save into your list;Multi Media Library is integrated into many popular applications and platforms you may already use.  
-.clear	
+    .clear	
 #footer
   .wrapper
     .c3.c3_first
@@ -53,7 +39,6 @@
       %ul
         %li
           %a{:target => "_blank", :href => "http://twitter.com/libros-de"} @LibrosDe on Twitter
-.clear
+    .clear
 #legal_footer
   &copy; 2011 jomayma, LLC.
-

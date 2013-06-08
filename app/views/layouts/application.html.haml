@@ -7,21 +7,26 @@
     = csrf_meta_tags
 
   %body
-    #login
-    - if @current_reader
-      %h1
-      Welcome
-      = @current_reader.name
-      = link_to 'Log Out', logout_path
-    - else
-      = link_to 'Log in with your Twitter account', "/auth/twitter"
-
-    %h1.title MML
-    #main
-      - if flash[:notice]
-        #notice.message= flash[:notice]
-      - elsif flash[:warning]
-        #warning.message= flash[:warning]
-
+    #container
+      #header
+        .wrapper
+          %h1
+            %a{:href => "/"} MML
+          %ul#nav
+            %li
+              %a{:href => "/books"} Books
+            %li
+              %a{:href => "/reviews"} Reviews
+          %ul#nav_minor
+            %li
+              - if @current_reader
+                Welcome
+                = @current_reader.name
+                = link_to 'Log Out', logout_path
+              - else
+                %a= link_to 'Log in with your Twitter account', "/auth/twitter"
+        - if flash[:notice]
+          #notice.message= flash[:notice]
+        - elsif flash[:warning]
+          #warning.message= flash[:warning]
       = yield
-
