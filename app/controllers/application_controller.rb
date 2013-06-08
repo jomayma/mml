@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     # we exploit the fact that find_by_id(nil) returns nil
     @current_reader ||= Reader.find_by_id(session[:user_id])
 
-    redirect_to login_path and return unless @current_reader
+    redirect_to home_path and return unless @current_reader
   end
   
 end

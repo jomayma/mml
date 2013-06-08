@@ -1,3 +1,4 @@
+.wrapper
 .row
   .span6
     %h1
@@ -35,7 +36,7 @@
       %blockquote
         %q{:cite => "https://twitter.com/#{@user.screen_name}/status/#{@user.status.id}"}
           %p
-            = auto_link(@user.status.text).html_safe
+            = @user.status.text
         %small
           = t("time.ago", :time => time_ago_in_words(@user.status.created_at).capitalize)
           = t("via.source", :source => @user.status.source).html_safe

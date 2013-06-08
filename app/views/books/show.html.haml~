@@ -1,5 +1,5 @@
 -# in app/views/movies/show.html.haml
- 
+.wrapper
 %h2 Details about #{@book.title}
  
 %ul#details
