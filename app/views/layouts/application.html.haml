@@ -1,7 +1,8 @@
 !!! 5
 %html
   %head
-    %title MML
+    %title MML - Multi Media Library: Save all of yours favorite media titles, just with one move of your hand!
+    %link{:href => "/assets/favicon.png", :type => "image/png", :rel => "icon"}
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
@@ -24,7 +25,7 @@
                 = @current_reader.name
                 = link_to 'Log Out', logout_path
               - else
-                %a= link_to 'Log in with your Twitter account', "/auth/twitter"
+                %a= link_to 'Login with your Twitter account', "/auth/twitter"
         - if flash[:notice]
           #notice.message= flash[:notice]
         - elsif flash[:warning]

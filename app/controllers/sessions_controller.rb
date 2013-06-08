@@ -20,9 +20,10 @@ class SessionsController < ApplicationController
       @user = client.user(include_entities: true)
       logger.debug "jmm - @user | #{@user}"
       logger.debug "jmm - @user.name | #{@user.name}"
+      @current_reader ||= Reader.find_by_id(session[:user_id])
     else
       #redirect_to failure_path #failure must be implemented
-      redirect_to books_path
+      redirect_to home_path
       logger.debug "jmm - login failure"
     end
     
@@ -31,13 +32,13 @@ class SessionsController < ApplicationController
   
   def error
     flash[:error] = "Sign in with Twitter failed"
-    redirect_to books_path
+    redirect_to home_path
   end
   
   def destroy
     :session.delete(:user_id)
     reset_session
     flash[:notice] = 'Logged out successfully.'
-    redirect_to books_path
+    redirect_to home_path
   end
 end
