@@ -2,6 +2,11 @@ class SessionsController < ApplicationController
   # user shouldn't have to be logged in before logging in!
   skip_before_filter :set_current_user
   
+  def current_user
+    return @current_reader if defined?(@current_reader)
+    @current_reader = cookies[:token] && Reader.find_by_token(cookies[:token])
+  end
+  
   def create
     auth=request.env["omniauth.auth"]
     logger.debug "jmm - auth | #{auth}"
@@ -32,13 +37,13 @@ class SessionsController < ApplicationController
   
   def error
     flash[:error] = "Sign in with Twitter failed"
-    redirect_to books_path
+    redirect_to home_path
   end
   
   def destroy
     :session.delete(:user_id)
     reset_session
     flash[:notice] = 'Logged out successfully.'
-    redirect_to books_path
+    redirect_to home_path
   end
 end

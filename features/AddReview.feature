@@ -1,7 +1,8 @@
 Feature: User can add a review to a book
 
 Scenario: Add a review
-  Given I am on the books home page
+  Given I am logged in as "Jorge"
+  And I am on the books home page
   When I follow "Add New Book"
   Then I should be on the Create New Book page
   When I fill in "Title" with "The Hobbit"

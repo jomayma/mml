@@ -64,6 +64,11 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
     faraday (0.8.7)
       multipart-post (~> 1.1)
     gherkin (2.12.0)
@@ -109,6 +114,9 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rack_session_access (0.1.1)
+      builder (>= 2.0.0)
+      rack (>= 1.0.0)
     rails (3.2.13)
       actionmailer (= 3.2.13)
       actionpack (= 3.2.13)
@@ -195,6 +203,7 @@ DEPENDENCIES
   cucumber-rails
   cucumber-rails-training-wheels
   database_cleaner
+  factory_girl_rails
   haml
   jquery-rails
   json (~> 1.7.7)
@@ -202,6 +211,7 @@ DEPENDENCIES
   omniauth
   omniauth-twitter
   pg
+  rack_session_access
   rails (= 3.2.13)
   rspec-rails (~> 2.0)
   ruby-debug19

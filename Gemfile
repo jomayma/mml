@@ -17,6 +17,9 @@ group :development, :test do
   gem 'ruby-debug19'
 end
 
+gem 'factory_girl_rails', :group => :test
+gem 'rack_session_access', :group => :test
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

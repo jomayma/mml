@@ -8,6 +8,6 @@ Scenario: Add a review
   And I press "Save Changes"
   Then I should be on the books home page
   When I follow "More about The Hobbit"
-  And I fill in "Review" with "What a wonderful story!"
+  And I fill in "Comments" with "What a wonderful story!"
   And I press "Add review"
   Then I should see "Reviews counted: 1"
