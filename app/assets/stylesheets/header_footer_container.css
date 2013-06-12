@@ -366,6 +366,15 @@ ul.spaced li {
     min-height: 330px;
     padding: 50px 40px;
 }
+.message {
+    font-weight: bold;
+}
+#notice.message {
+    color: yellow
+}
+#warning.message {
+    color: red
+}
 #content.wrapper {
     width: 870px;
 }

@@ -4,7 +4,7 @@ Mml::Application.routes.draw do
 
   #resources :sessions
   #get '/auth/twitter/callback', to: 'sessions#create', as: 'callback'
-  get 'auth/twitter', to: 'sessions#create', as: 'login'
+  #get 'auth/twitter', to: 'sessions#create', as: 'login'
   #match 'auth/:provider/callback' => 'sessions#create',:as => 'login'
   get '/auth/:provider/callback', to: 'sessions#create', as: 'callback'
   get '/profile', to: 'sessions#show', as: 'show'
@@ -15,5 +15,5 @@ Mml::Application.routes.draw do
   end
   resources :readers
   #root :to => redirect('/books')
-  root :to => redirect('/welcome/home')
+  root :to => redirect('/home')
 end

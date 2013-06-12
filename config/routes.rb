@@ -4,9 +4,9 @@ Mml::Application.routes.draw do
 
   #resources :sessions
   #get '/auth/twitter/callback', to: 'sessions#create', as: 'callback'
-  get 'auth/twitter', to: 'sessions#create', as: 'login'
+  #get 'auth/twitter', to: 'sessions#create', as: 'login'
   #match 'auth/:provider/callback' => 'sessions#create',:as => 'login'
-  get '/auth/:provider/callback', to: 'sessions#create', as: 'callback'
+  get '/auth/:provider/callback', to: 'sessions#create', as: 'login'
   get '/profile', to: 'sessions#show', as: 'show'
   match 'logout' => 'sessions#destroy'
   delete '/signout', to: 'sessions#destroy', as: 'signout'

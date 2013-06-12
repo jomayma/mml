@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     
     session[:access_token] = request.env['omniauth.auth']['credentials']['token']
     session[:access_secret] = request.env['omniauth.auth']['credentials']['secret']
-    redirect_to show_path, notice: "Signed in"
+    redirect_to home_path, notice: "Signed in"
   end
   
   def show
@@ -36,8 +36,8 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    :session.delete(:user_id)
-    reset_session
+    session.delete(:user_id)
+    #reset_session
     flash[:notice] = 'Logged out successfully.'
     redirect_to home_path
   end
