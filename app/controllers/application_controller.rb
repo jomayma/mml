@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_filter :set_current_user
+  #before_filter :set_current_user
   protect_from_forgery
 
   private
@@ -24,8 +24,15 @@ class ApplicationController < ActionController::Base
   def set_current_user
     # we exploit the fact that find_by_id(nil) returns nil
     @current_reader ||= Reader.find_by_id(session[:user_id])
-
-    redirect_to home_path, warning: "You must login first" and return unless @current_reader
+    logger.debug "jmm - @current_reader | #{@current_reader}"
+    if @current_reader
+      logger.debug "jmm - @current_reader is defined"
+      return
+    else
+      flash[:warning]= "You must login first"
+      redirect_to home_path
+    end
+    #redirect_to home_path and return unless @current_reader
   end
   
 end

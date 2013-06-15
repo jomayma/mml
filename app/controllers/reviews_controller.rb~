@@ -25,7 +25,8 @@ class ReviewsController < ApplicationController
     @book = Book.find(book_id)
     logger.debug "params[:review] | #{params[:review]}"
     r = @book.reviews.build(params[:review])
-    @current_user.reviews << r
+    @current_reader.reviews << r
+    flash[:notice] = "Reviews counted: #{@book.reviews.count}"
     redirect_to book_path(@book)
   end
 end

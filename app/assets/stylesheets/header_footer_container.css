@@ -369,12 +369,20 @@ ul.spaced li {
 .message {
     font-weight: bold;
 }
+
+#notice, #warning {
+  background: rosybrown;
+  margin: 1em 0;
+  padding: 4px;
+}
+
 #notice.message {
     color: yellow
 }
 #warning.message {
     color: red
 }
+
 #content.wrapper {
     width: 870px;
 }

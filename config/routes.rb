@@ -10,6 +10,8 @@ Mml::Application.routes.draw do
   get '/profile', to: 'sessions#show', as: 'show'
   match 'logout' => 'sessions#destroy'
   delete '/signout', to: 'sessions#destroy', as: 'signout'
+  
+  get '/reviews', to: 'reviews#all', as: 'reviews'
   resources :books do
     resources :reviews
   end

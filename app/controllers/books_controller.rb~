@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   def index
+  debbuger
     @books = Book.all
   end
   
@@ -14,7 +15,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Movie.create!(params[:book])
+    @book = Book.create!(params[:book])
     flash[:notice] = "#{@book.title} was successfully created."
     redirect_to books_path
   end

@@ -4,6 +4,10 @@ class ReviewsController < ApplicationController
     @reviews = Book.find(id).reviews
   end
   
+  def all
+    @all_reviews = Review.all;
+  end
+  
   def show
     id = params[:book_id] # retrieve book ID from URI route
     @review = Review.find(id) # look up  by unique ID
@@ -26,6 +30,7 @@ class ReviewsController < ApplicationController
     logger.debug "params[:review] | #{params[:review]}"
     r = @book.reviews.build(params[:review])
     @current_reader.reviews << r
+    flash[:notice] = "Reviews counted: #{@book.reviews.count}"
     redirect_to book_path(@book)
   end
 end
