@@ -1,0 +1,7 @@
+class HomeController < ApplicationController
+  # user don't have to be logged in this page!
+  before_filter :get_current_user
+  
+  def index
+  end
+end

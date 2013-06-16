@@ -15,11 +15,11 @@
     padding-left: 30px;
 }
 #availability.available {
-    background-image: url("/i/available.gif");
+    background-image: url("/assets/available.gif");
     color: #00CC33;
 }
 #availability.not_available {
-    background-image: url("/i/not_available.gif");
+    background-image: url("/assets/not_available.gif");
     color: #FF0000;
 }
 .clear {
@@ -32,19 +32,19 @@
     display: none;
 }
 .i_read {
-    background-image: url("/i/i_read.gif");
+    background-image: url("/assets/i_read.gif");
 }
 .i_delete {
-    background-image: url("/i/i_delete.gif");
+    background-image: url("/assets/i_delete.gif");
 }
 .i_unread {
-    background-image: url("/i/i_unread.gif");
+    background-image: url("/assets/i_unread.gif");
 }
 .loading {
-    background-image: url("/i/loading.gif");
+    background-image: url("/assets/loading.gif");
 }
 .i_save {
-    background-image: url("/i/i_save.gif");
+    background-image: url("/assets/i_save.gif");
 }
 .red {
     color: #FF0000;
@@ -66,22 +66,22 @@
     margin-right: auto;
 }
 .add_to_firefox {
-    background-image: url("/i/btn_firefox.png");
+    background-image: url("/assets/btn_firefox.png");
 }
 .add_to_firefox_dark {
-    background-image: url("/i/btn_firefox_dark.png");
+    background-image: url("/assets/btn_firefox_dark.png");
 }
 .add_to_iphone {
-    background-image: url("/i/btn_iphone.png");
+    background-image: url("/assets/btn_iphone.png");
 }
 .add_to_iphone_dark {
-    background-image: url("/i/btn_iphone_dark.png");
+    background-image: url("/assets/btn_iphone_dark.png");
 }
 .add_to_any {
-    background-image: url("/i/btn_any.png");
+    background-image: url("/assets/btn_any.png");
 }
 .add_to_any_dark {
-    background-image: url("/i/btn_any_dark.png");
+    background-image: url("/assets/btn_any_dark.png");
 }
 .btn_line a {
     float: left;
@@ -96,7 +96,7 @@
     border: 2px dashed #666666;
 }
 #idea_shower_header {
-    background: url("/i/idea_shower_mini.gif") no-repeat scroll right center #000000;
+    background: url("/assets/idea_shower_mini.gif") no-repeat scroll right center #000000;
     color: #CCCCCC;
     display: none;
     font-size: 11px;
@@ -127,7 +127,7 @@
     padding: 0;
 }
 body {
-    background: url("/i/v2/bg.png") repeat-x scroll center top #EBBF7F;
+    background: url("/assets/v2/bg.png") repeat-x scroll center top #EBBF7F;
     color: #494949;
     font-family: Arial,Helvetica,sans-serif;
     font-size: 13px;
@@ -176,7 +176,7 @@ margin-right: 2px;
 text-align: right;
 }
 .form_book textarea{
-    width: 190px;
+    width: 211px;
     height: 65px;
 }
 .form_book select{
@@ -257,7 +257,7 @@ input {
     width: 150px;
 }
 input.btn {
-    background: url("/i/btn_bg.png") repeat-x scroll 0 0 transparent;
+    background: url("/assets/btn_bg.png") repeat-x scroll 0 0 transparent;
     border: 1px solid #DEA303;
     color: #5A5A5A;
     font-size: 11px;
@@ -311,7 +311,7 @@ ul.spaced li {
     position: relative;
 }
 #header h1 a {
-    background: url("/img/MML-logo.v4.png") no-repeat scroll left center transparent;
+    background: url("/assets/MML-logo.v4.png") no-repeat scroll left center transparent;
     display: block;
     height: 98px;
     position: relative;
@@ -352,10 +352,18 @@ ul.spaced li {
     float: left;
     margin-left: 23px;
 }
-#nav_minor li a {
+#nav_minor li {
+    color: #EBBF7F;
+    font-size: 12px;
+    font-weight: bold;
+}
+    
+#nav_minor li a.twitter {
+    background: url("/assets/mini_twitter.png") no-repeat scroll right center transparent;
     color: #EBBF7F;
     font-size: 11px;
     text-decoration: none;
+    padding: 0 0 0 13px;
 }
 #nav_minor li a:hover {
     text-decoration: underline;
@@ -366,6 +374,23 @@ ul.spaced li {
     min-height: 330px;
     padding: 50px 40px;
 }
+.message {
+    font-weight: bold;
+}
+
+#notice, #warning {
+  background: rosybrown;
+  margin: 1em 0;
+  padding: 4px;
+}
+
+#notice.message {
+    color: yellow
+}
+#warning.message {
+    color: red
+}
+
 #content.wrapper {
     width: 870px;
 }
@@ -470,8 +495,25 @@ ul.spaced li {
 .update_list ul {
     margin-left: 22px;
 }
+
+.stars_1 {
+    background: url("/assets/stars_1.png") center no-repeat;
+}
+.stars_2 {
+    background: url("/assets/stars_2.png") center no-repeat;
+}
+.stars_3 {
+    background: url("/assets/stars_3.png") center no-repeat;
+}
+.stars_4 {
+    background: url("/assets/stars_4.png") center no-repeat;
+}
+.stars_5 {
+    background: url("/assets/stars_5.png") center no-repeat;
+}
+
 #footer {
-    background: url("/i/v2/grad_dark.png") repeat-x scroll center top #000000;
+    background: url("/assets/v2/grad_dark.png") repeat-x scroll center top #000000;
     min-height: 121px;
     padding: 24px 19px 25px;
 }
@@ -529,7 +571,7 @@ ul.spaced li {
     margin: 5px 0 15px;
 }
 .float_box {
-    background: url("/i/orange_grad.png") repeat-x scroll center bottom #FCF493;
+    background: url("/assets/orange_grad.png") repeat-x scroll center bottom #FCF493;
     border: 1px dotted #CCCCCC;
     float: right;
     margin: 0 0 10px 30px;
@@ -537,7 +579,7 @@ ul.spaced li {
     width: 350px;
 }
 #content_index {
-    background: url("/img/LibraryItems_Zenodotus_Banner.png") no-repeat scroll 0 0 transparent;
+    background: url("/assets/LibraryItems_Zenodotus_Banner.png") no-repeat scroll 0 0 transparent;
     height: 342px;
 }
 .h_tagline {
@@ -570,7 +612,7 @@ ul.spaced li {
     text-decoration: underline;
 }
 #apps_computer li.highlight a, #apps_mobile li.highlight a {
-    background: url("/img/Z_logo.png") no-repeat scroll left center transparent;
+    background: url("/assets/Z_logo.png") no-repeat scroll left center transparent;
     color: #A07D64;
     font-size: 17px;
     font-weight: bold;
@@ -580,7 +622,7 @@ ul.spaced li {
     padding: 0 0 0 13px;
 }
 #footer_index {
-    background: url("/i/v2/grad_dark.png") repeat-x scroll center top #715453;
+    background: url("/assets/v2/grad_dark.png") repeat-x scroll center top #715453;
     color: #EBBF7F;
     padding: 35px 33px 37px;
 }
@@ -590,16 +632,16 @@ ul.spaced li {
     padding: 0 33px 0 127px;
 }
 #footer_index .step1 {
-    background-image: url("/img/SCAN_logo.png");
+    background-image: url("/assets/SCAN_logo.png");
     width: 160px;
 }
 #footer_index .step2 {
-    background-image: url("/img/1304722210_Identification_card.png");
+    background-image: url("/assets/1304722210_Identification_card.png");
     padding-left: 134px;
     width: 160px;
 }
 #footer_index .step3 {
-    background-image: url("/img/downArrow.png");
+    background-image: url("/assets/downArrow.png");
     padding-left: 115px;
     padding-right: 0;
     width: 155px;

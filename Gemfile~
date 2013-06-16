@@ -1,11 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'twitter'
+gem 'twitter-text'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#gem 'sqlite3'
 
 # use Haml for templates
 gem 'haml'
@@ -13,6 +16,9 @@ gem 'haml'
 group :development, :test do
   gem 'ruby-debug19'
 end
+
+gem 'factory_girl_rails', :group => :test
+gem 'rack_session_access', :group => :test
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -52,5 +58,11 @@ group :test, :development do
   gem 'launchy'
   gem 'rspec-rails', '~> 2.0'
   gem 'ZenTest'
+  gem 'sqlite3' # use SQLite only in development and testing
+  gem 'json', '~> 1.7.7'
+end
+
+group :production do
+  gem 'pg' # use PostgreSQL in production (Heroku)
 end
 
