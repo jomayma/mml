@@ -10,16 +10,8 @@
   = text_field :book, 'author'
   %br
   
-  = label :book, :rating, 'Rating'
-  = select :book, :rating, ['G','PG','PG-13','R','NC-17']
-  %br
-  
-  = label :book, :release_date, 'Released On'
-  = date_select :book, :release_date
-  %br
-  
-  = label :book, :description, 'Description'
-  = text_area :book, 'description'
+  = label :book, :description, 'Summary'
+  = text_area :book, 'summary'
   %br
   
   = submit_tag 'Save Changes'

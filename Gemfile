@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'twitter'
+gem 'twitter-text'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -11,7 +14,17 @@ gem 'rails', '3.2.13'
 gem 'haml'
 # use Ruby debugger
 group :development, :test do
-  gem 'ruby-debug19'
+#gem 'linecache19', '0.5.13'
+#gem 'ruby-debug-base19', '0.11.26'
+#gem 'ruby-debug19', :require => 'ruby-debug'
+#  gem 'ruby-debug19'
+  gem 'debugger'
+  #gem 'ruby-debug'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'rack_session_access'
 end
 
 # Gems used only for assets and not required

@@ -23,6 +23,7 @@ require 'uri'
 require 'cgi'
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "selectors"))
+require "rack_session_access/capybara"
 
 module WithinHelpers
   def with_scope(locator)
@@ -251,4 +252,16 @@ end
 
 Then /^show me the page$/ do
   save_and_open_page
+end
+
+#FactoryGirl.find_definitions
+Given /^I am logged in as "(.*)"$/ do |name|
+  @current_reader = FactoryGirl.create(:reader, :name => name)
+  page.set_rack_session(:user_id => @current_reader.uid)  
+  #session[:user_id] = @current_reader.uid;
+  #@current_reader.activate!
+  #visit("/session/new")
+  #fill_in("email", :with => @user.email)
+  #fill_in("password", :with => @user.password)
+  #click_button("Sign In")
 end
