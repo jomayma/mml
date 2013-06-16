@@ -16,11 +16,15 @@ class ApplicationController < ActionController::Base
   protected # prevents method from being invoked by a route
   
   def get_current_user
-    return @current_user if defined?(@current_user)
-    @current_user = cookies[:token] && Reader.find_by_token(cookies[:token])
+    return @current_reader if defined?(@current_reader)
+    #@current_reader = cookies[:token] && Reader.find_by_token(cookies[:token])
+    if session[:user_id]
+      @current_reader ||= Reader.find_by_id(session[:user_id])
+    end
   end
   
   def set_current_user
+    debugger
     # we exploit the fact that find_by_id(nil) returns nil
     @current_reader ||= Reader.find_by_id(session[:user_id])
     if @current_reader

@@ -352,10 +352,18 @@ ul.spaced li {
     float: left;
     margin-left: 23px;
 }
-#nav_minor li a {
+#nav_minor li {
+    color: #EBBF7F;
+    font-size: 12px;
+    font-weight: bold;
+}
+    
+#nav_minor li a.twitter {
+    background: url("/assets/mini_twitter.png") no-repeat scroll right center transparent;
     color: #EBBF7F;
     font-size: 11px;
     text-decoration: none;
+    padding: 0 0 0 13px;
 }
 #nav_minor li a:hover {
     text-decoration: underline;
@@ -369,12 +377,20 @@ ul.spaced li {
 .message {
     font-weight: bold;
 }
+
+#notice, #warning {
+  background: rosybrown;
+  margin: 1em 0;
+  padding: 4px;
+}
+
 #notice.message {
     color: yellow
 }
 #warning.message {
     color: red
 }
+
 #content.wrapper {
     width: 870px;
 }
@@ -479,6 +495,23 @@ ul.spaced li {
 .update_list ul {
     margin-left: 22px;
 }
+
+.stars_1 {
+    background: url("/assets/stars_1.png") center no-repeat;
+}
+.stars_2 {
+    background: url("/assets/stars_2.png") center no-repeat;
+}
+.stars_3 {
+    background: url("/assets/stars_3.png") center no-repeat;
+}
+.stars_4 {
+    background: url("/assets/stars_4.png") center no-repeat;
+}
+.stars_5 {
+    background: url("/assets/stars_5.png") center no-repeat;
+}
+
 #footer {
     background: url("/assets/v2/grad_dark.png") repeat-x scroll center top #000000;
     min-height: 121px;
