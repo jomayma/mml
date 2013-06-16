@@ -24,7 +24,6 @@ class ApplicationController < ActionController::Base
   end
   
   def set_current_user
-    debugger
     # we exploit the fact that find_by_id(nil) returns nil
     @current_reader ||= Reader.find_by_id(session[:user_id])
     if @current_reader
