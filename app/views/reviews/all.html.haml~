@@ -1,0 +1,24 @@
+-#  This file is app/views/movies/index.html.haml
+.wrapper
+  %h2 All Books
+   
+  %table#reviews{:class => "table_results"}
+    %thead
+      %tr
+        %th Review Title
+        %th Review Author
+        %th More Info
+    %tbody
+      - @all_reviews.each do |review|
+        %tr
+        
+    t.integer  "stars"
+    t.text     "comments"
+    t.string   "tags"
+    t.integer  "reader_id"
+    t.integer  "book_id"
+        
+          %td= review.book_id
+          %td= review.comments
+          %td= link_to "More about #{review.id}", review_path(review)
+  
