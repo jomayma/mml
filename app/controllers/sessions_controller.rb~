@@ -4,11 +4,9 @@ class SessionsController < ApplicationController
   
   def create
     auth=request.env["omniauth.auth"]
-    logger.debug "jmm - auth | #{auth}"
     user=Reader.find_by_provider_and_uid(auth["provider"],auth["uid"]) ||
       Reader.create_with_omniauth(auth)
-    session[:user_id] = user.id
-    
+    session[:user_id] = user.id 
     session[:access_token] = request.env['omniauth.auth']['credentials']['token']
     session[:access_secret] = request.env['omniauth.auth']['credentials']['secret']
     redirect_to home_path, notice: "Signed in"
@@ -18,13 +16,10 @@ class SessionsController < ApplicationController
     logger.debug "jmm - begin SessionsController.create - client | #{client}"
     if session['access_token'] && session['access_secret']
       @user = client.user(include_entities: true)
-      logger.debug "jmm - @user | #{@user}"
-      logger.debug "jmm - @user.name | #{@user.name}"
       @current_reader ||= Reader.find_by_id(session[:user_id])
     else
       #redirect_to failure_path #failure must be implemented
       redirect_to home_path
-      logger.debug "jmm - login failure"
     end
     
     #redirect_to books_path #the show view is not working right now
