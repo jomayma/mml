@@ -1,5 +1,5 @@
 -#  This file is app/views/movies/index.html.haml
-#content_index.wrapper
+.wrapper
   %h2 All Books
    
   %table#books{:class => "table_results"}
@@ -16,5 +16,6 @@
         %tr
           %td= book.title
           %td= book.author
-          %td= link_to "More about #{book.title}", book_path(book)
+          %td= link_to "More about #{book.title}", book_path(book) 
+          %br= button_to "DEL", book_path(book), :method => :delete, :confirm => 'Are you sure?'
   
