@@ -1,5 +1,5 @@
 -#  This file is app/views/movies/index.html.haml
-#content_index.wrapper
+.wrapper
   %h2 All Books
    
   %table#books{:class => "table_results"}
@@ -11,6 +11,11 @@
     %tfoot
       %tr
         %td{:class => "crud_links", :colspan => 3}= link_to "Add New Book", new_book_path
+      %tr
+        %td{:class => "crud_links", :colspan => 3}= form_tag :action => 'search_gbook' do
+          %label{:for => 'search_terms'} Search Terms
+            = text_field_tag 'search_terms'
+            = submit_tag 'Search GBook'
     %tbody
       - @books.each do |book|
         %tr
