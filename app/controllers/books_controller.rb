@@ -18,4 +18,10 @@ class BooksController < ApplicationController
     flash[:notice] = "#{@book.title} was successfully created."
     redirect_to books_path
   end
+  
+  def search_gbook
+    #hardwire to simulate failure
+    flash[:warning] = "'#{params[:search_terms]}' was not found in GoogleBooks."
+    redirect_to books_path
+  end
 end
