@@ -19,9 +19,11 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
   
-  def search_gbook
+  def search_gbdb
+    @books = Book.find_in_gbooks(params[:search_terms])
+    
     #hardwire to simulate failure
-    flash[:warning] = "'#{params[:search_terms]}' was not found in GoogleBooks."
-    redirect_to books_path
+    #flash[:warning] = "'#{params[:search_terms]}' was not found in GoogleBooks."
+    #redirect_to books_path
   end
 end

@@ -13,10 +13,12 @@ Mml::Application.routes.draw do
   
   get '/reviews', to: 'reviews#all', as: 'reviews'
 
-  post '/books/search_gbook'
   resources :books do
     resources :reviews
   end
+
+  post '/books/search_gbdb'
+
   resources :readers
   #root :to => redirect('/books')
   root :to => redirect('/home')

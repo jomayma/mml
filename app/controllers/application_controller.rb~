@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   protected # prevents method from being invoked by a route
   
   def get_current_user
-    #temporaly solution to bypass login on development 
+    #temporaly solution to simulate login on development 
     if env["REMOTE_HOST"] == "localhost"
       session[:user_id] = 1;
     end
@@ -28,6 +28,10 @@ class ApplicationController < ActionController::Base
   end
   
   def set_current_user
+    #temporaly solution to simulate login on development 
+    if env["REMOTE_HOST"] == "localhost"
+      session[:user_id] = 1;
+    end
     # we exploit the fact that find_by_id(nil) returns nil
     @current_reader ||= Reader.find_by_id(session[:user_id])
     if @current_reader

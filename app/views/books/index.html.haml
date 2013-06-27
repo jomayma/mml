@@ -13,7 +13,7 @@
         %td{:class => "crud_links", :colspan => 3}= link_to "Add New Book", new_book_path
       %tr
         %td{:class => "crud_links", :colspan => 3}
-          = form_tag :action => 'search_gbook' do          
+          = form_tag :action => 'search_gbdb' do          
             %label{:for => 'search_terms'} Add from GoogleBook
             = text_field_tag 'search_terms'
             = submit_tag 'Search'
