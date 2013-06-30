@@ -1,6 +1,7 @@
 class Book < ActiveRecord::Base
   has_many :reviews;
   
-  def find_in_gbooks
+  def self.find_in_gbooks( string )
+    GoogleBooks.search(string)
   end
 end

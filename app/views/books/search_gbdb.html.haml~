@@ -11,6 +11,6 @@
       - @books.each do |book|
         %tr
           %td= book.title
-          %td= book.authors
+          %td= book.author
           %td= link_to "Add", edit_book_path(book)
   
