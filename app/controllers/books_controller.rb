@@ -13,6 +13,12 @@ class BooksController < ApplicationController
     # default: render 'new' template
   end
 
+  def new_from_gbdb
+    isbn_book = params[:isbn]
+    title_book = params[:title]
+    @book = Book.get_first_in_gbooks(title_book)
+  end
+  
   def create
     @book = Book.create!(params[:book])
     flash[:notice] = "#{@book.title} was successfully created."

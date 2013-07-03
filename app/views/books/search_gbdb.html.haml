@@ -12,5 +12,5 @@
         %tr
           %td= book.title
           %td= book.authors
-          %td= link_to "Add", edit_book_path(book)
+          %td= link_to "Add", books_new_from_gbdb_path(title: book.title, isbn: book.isbn)
   
