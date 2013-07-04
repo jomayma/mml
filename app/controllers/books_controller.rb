@@ -16,12 +16,9 @@ class BooksController < ApplicationController
   def new_from_gbdb
     isbn_book = params[:isbn]
     title_book = params[:title]
-    debugger
     book = Book.get_first_in_gbooks(params)
-    #"book"=>{"title"=>"The Adventures of Oliver Twist", "author"=>"Charles Dickens", "summary"=>""}
     @book = Book.create(book)
-    flash[:notice] = "#{@book.title} was successfully created."
-    #redirect_to books_path
+    flash[:notice] = "#{@book.title} was successfully added."
   end
   
   def create
@@ -31,10 +28,10 @@ class BooksController < ApplicationController
   end
   
   def search_gbdb
-    @books = Book.find_in_gbooks(params[:search_terms])
-    
-    #hardwire to simulate failure
-    #flash[:warning] = "'#{params[:search_terms]}' was not found in GoogleBooks."
-    #redirect_to books_path
+    @books = Book.find_in_gbooks(params[:search_terms])    
+    if @books.first == nil
+      flash[:warning] = "'#{params[:search_terms]}' was not found in GoogleBooks."
+      redirect_to books_path
+    end
   end
 end

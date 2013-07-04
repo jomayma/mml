@@ -12,16 +12,16 @@ Background: Start from the Search form on the home page
 
 Scenario: Try to add nonexistent book (sad path)
  
-  When I fill in "Add from GoogleBook" with "Book That Does Not Exist"
+  When I fill in "Add from GoogleBook" with "inauthor:zzzzzzzzzzzzzzzzzzzz"
   And I press "Search"
   Then I should be on the books home page
-  And I should see "'Book That Does Not Exist' was not found in GoogleBooks."
+  And I should see "'inauthor:zzzzzzzzzzzzzzzzzzzz' was not found in GoogleBooks."
 
 Scenario: Try to add existent book (happy path)
  
-  When I fill in "Add from GoogleBook" with "El Quijote"
+  When I fill in "Add from GoogleBook" with "intitle:El Quijote"
   And I press "Search"
-  Then I should be on the "Search Results" page
+  Then I should be on the Search Results page
   And I should not see "not found"
-  And I should see "El Quijote"
+  And I should see "Don Quijote de La Mancha"
 

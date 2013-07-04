@@ -17,9 +17,9 @@ class ApplicationController < ActionController::Base
   
   def get_current_user
     #temporaly solution to simulate login on development 
-    if env["REMOTE_HOST"] == "localhost"
-      session[:user_id] = 1;
-    end
+    #if env["REMOTE_HOST"] == "localhost"
+    #  session[:user_id] = 1;
+    #end
     return @current_reader if defined?(@current_reader)
     #@current_reader = cookies[:token] && Reader.find_by_token(cookies[:token])
     if session[:user_id]
