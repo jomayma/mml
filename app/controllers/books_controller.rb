@@ -16,7 +16,12 @@ class BooksController < ApplicationController
   def new_from_gbdb
     isbn_book = params[:isbn]
     title_book = params[:title]
-    @book = Book.get_first_in_gbooks(title_book)
+    debugger
+    book = Book.get_first_in_gbooks(params)
+    #"book"=>{"title"=>"The Adventures of Oliver Twist", "author"=>"Charles Dickens", "summary"=>""}
+    @book = Book.create(book)
+    flash[:notice] = "#{@book.title} was successfully created."
+    #redirect_to books_path
   end
   
   def create
