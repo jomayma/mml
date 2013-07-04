@@ -17,7 +17,8 @@ describe BooksController do
   end
   describe 'searching books on Google books' do
     it 'should call a model method that performs google book search' do
-      Book.should_receive(:find_in_gbooks).with("El Quijote").and_return(@fake_results)
+      params = {"search_terms"=>"El Quijote", "controller"=>"books", "action"=>"search_gbdb", "user_ip"=>"0.0.0.0"}
+      Book.should_receive(:find_in_gbooks).with(params).and_return(@fake_results)
       post :search_gbdb, {:search_terms => "El Quijote"}
     end
     it 'should select the Search Results template for rendering' do

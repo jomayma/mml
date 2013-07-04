@@ -6,9 +6,10 @@ describe Book do
       #mocking the GoogleBooks gem
       #GoogleBooks = mock('gbdb')
       #GoogleBooks.stub(:search)
+      params = {:search_terms => 'El Quijote',:user_ip => '127.0.0.1'}
       
-      GoogleBooks.should_receive(:search).with('El Quijote')
-      Book.find_in_gbooks('El Quijote')
+      GoogleBooks.should_receive(:search).with(params[:search_terms],{},params[:user_ip])
+      Book.find_in_gbooks(params)
     end
   end
 end

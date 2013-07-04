@@ -14,8 +14,7 @@ class BooksController < ApplicationController
   end
 
   def new_from_gbdb
-    isbn_book = params[:isbn]
-    title_book = params[:title]
+    params[:user_ip] = request.remote_ip
     book = Book.get_first_in_gbooks(params)
     @book = Book.create(book)
     flash[:notice] = "#{@book.title} was successfully added."
@@ -28,7 +27,8 @@ class BooksController < ApplicationController
   end
   
   def search_gbdb
-    @books = Book.find_in_gbooks(params[:search_terms])    
+    params[:user_ip] = request.remote_ip
+    @books = Book.find_in_gbooks(params)    
     if @books.first == nil
       flash[:warning] = "'#{params[:search_terms]}' was not found in GoogleBooks."
       redirect_to books_path

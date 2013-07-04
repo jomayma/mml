@@ -1,9 +1,8 @@
 class Book < ActiveRecord::Base
   has_many :reviews;
   
-  def self.find_in_gbooks( string )
-    books = GoogleBooks.search(string)
-    logger.debug("books=#{books}")
+  def self.find_in_gbooks( params )
+    books = GoogleBooks.search(params[:search_terms],{},params[:user_ip])
     
     return books
   end
@@ -14,7 +13,7 @@ class Book < ActiveRecord::Base
     else
       string = "intitle:#{params[:title]}"
     end
-    books = GoogleBooks.search(string)
+    books = GoogleBooks.search(string,{},params[:user_ip])
     first_gbook = books.first    
     book = {"title"=>first_gbook.title, "author"=>first_gbook.authors, "summary"=>first_gbook.description}
  
