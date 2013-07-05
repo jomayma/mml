@@ -13,10 +13,10 @@ class Book < ActiveRecord::Base
     else
       string = "intitle:#{params[:title]}"
     end
-    books = GoogleBooks.search(string,{},params[:user_ip])
+    books = GoogleBooks.search(string,{:count => 1},params[:user_ip])
     first_gbook = books.first    
-    book = {"title"=>first_gbook.title, "author"=>first_gbook.authors, "summary"=>first_gbook.description}
- 
+    book = {"title"=>first_gbook.title, "author"=>first_gbook.authors, "summary"=>first_gbook.description, "image_link"=>first_gbook.image_link}
+
     return book
   end
 end

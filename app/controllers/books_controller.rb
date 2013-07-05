@@ -6,6 +6,10 @@ class BooksController < ApplicationController
   def show
     id = params[:id] # retrieve book ID from URI route
     @book = Book.find(id) # look up book by unique ID
+    params[:user_ip] = request.remote_ip
+    params[:title] = @book.title
+    @gbook = Book.get_first_in_gbooks(params)
+    
     # will render app/views/books/show.html.haml by default
   end
   
@@ -15,8 +19,8 @@ class BooksController < ApplicationController
 
   def new_from_gbdb
     params[:user_ip] = request.remote_ip
-    book = Book.get_first_in_gbooks(params)
-    @book = Book.create(book)
+    @gbook = Book.get_first_in_gbooks(params)
+    @book = Book.create({"title"=>@gbook["title"], "author"=>@gbook["author"], "summary"=>@gbook["summary"]})
     flash[:notice] = "#{@book.title} was successfully added."
   end
   

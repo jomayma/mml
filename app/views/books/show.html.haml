@@ -1,7 +1,8 @@
 -# in app/views/movies/show.html.haml
 .wrapper
-  %h2 Details about #{@book.title}
-   
+  = image_tag @gbook["image_link"]
+  %h2 #{@book.title}
+    
   %ul#details
     %li
       Author:

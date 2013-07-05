@@ -1,6 +1,7 @@
 %h1 Add your review to this book
 .wrapper
-  %h2 Details about #{@book.title}
+  = image_tag @gbook["image_link"]
+  %h2 #{@book.title}
    
   %ul#details
     %li

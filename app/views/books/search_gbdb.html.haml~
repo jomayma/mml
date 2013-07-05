@@ -4,12 +4,14 @@
   %table#books{:class => "table_results"}
     %thead
       %tr
-        %th Book Title
-        %th Book Author
+        %th Book
+        %th Title
+        %th Author
         %th Action
     %tbody
       - @books.each do |book|
         %tr
+          %td= image_tag book.image_link(:zoom => 4)
           %td= book.title
           %td= book.authors
           %td= link_to "Add", books_new_from_gbdb_path(title: book.title, isbn: book.isbn)

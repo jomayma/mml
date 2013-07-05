@@ -3,7 +3,6 @@ class Book < ActiveRecord::Base
   
   def self.find_in_gbooks( params )
     books = GoogleBooks.search(params[:search_terms],{},params[:user_ip])
-    logger.debug("books=#{books}")
     
     return books
   end
@@ -16,8 +15,8 @@ class Book < ActiveRecord::Base
     end
     books = GoogleBooks.search(string,{},params[:user_ip])
     first_gbook = books.first    
-    book = {"title"=>first_gbook.title, "author"=>first_gbook.authors, "summary"=>first_gbook.description}
- 
+    book = {"title"=>first_gbook.title, "author"=>first_gbook.authors, "summary"=>first_gbook.description, "image_link"=>first_gbook.image_link}
+
     return book
   end
 end
