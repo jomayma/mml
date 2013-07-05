@@ -33,4 +33,14 @@ class ReviewsController < ApplicationController
     flash[:notice] = "Reviews counted: #{@book.reviews.count}"
     redirect_to book_path(@book)
   end
+  
+  def create_from_gbdb    
+    book_id = params[:book_id]
+    @book = Book.find(book_id)
+    logger.debug "params[:review] | #{params[:review]}"
+    r = @book.reviews.build(params[:review])
+    @current_reader.reviews << r
+    flash[:notice] = "Reviews counted: #{@book.reviews.count}"
+    redirect_to book_path(@book)
+  end
 end

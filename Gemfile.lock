@@ -78,10 +78,15 @@ GEM
       multipart-post (~> 1.1)
     gherkin (2.12.0)
       multi_json (~> 1.3)
+    googlebooks (0.0.6)
+      httparty
     haml (4.0.3)
       tilt
     hashie (2.0.5)
     hike (1.2.2)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (2.2.1)
@@ -96,6 +101,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     multi_json (1.7.3)
+    multi_xml (0.5.4)
     multipart-post (1.2.0)
     nokogiri (1.5.9)
     oauth (0.4.7)
@@ -198,6 +204,7 @@ DEPENDENCIES
   database_cleaner
   debugger
   factory_girl_rails
+  googlebooks
   haml
   jquery-rails
   json (~> 1.7.7)

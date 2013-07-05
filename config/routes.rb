@@ -12,10 +12,17 @@ Mml::Application.routes.draw do
   delete '/signout', to: 'sessions#destroy', as: 'signout'
   
   get '/reviews', to: 'reviews#all', as: 'reviews'
+
+  post '/books/search_gbdb'
+  get '/books/new_from_gbdb'
+  
   resources :books do
     resources :reviews
   end
+
   resources :readers
   #root :to => redirect('/books')
   root :to => redirect('/home')
+  
+
 end
