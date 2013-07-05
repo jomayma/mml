@@ -8,11 +8,12 @@
         %th Book Title
         %th Book Author
         %th More Info
+        %th
     %tfoot
       %tr
-        %td{:class => "crud_links", :colspan => 3}= link_to "Add New Book", new_book_path
+        %td{:class => "crud_links", :colspan => 4}= link_to "Add New Book", new_book_path
       %tr
-        %td{:class => "crud_links", :colspan => 3}
+        %td{:class => "crud_links", :colspan => 4}
           = form_tag :action => 'search_gbdb' do          
             %label{:for => 'search_terms'} Add from GoogleBook
             = text_field_tag 'search_terms'
@@ -22,5 +23,6 @@
         %tr
           %td= book.title
           %td= book.author
-          %td= link_to "More about #{book.title}", book_path(book)
+          %td= link_to "More about #{book.title}", book_path(book) 
+          %td= button_to "DEL", book_path(book), :method => :delete, :confirm => 'Are you sure?'
   

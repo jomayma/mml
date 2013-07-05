@@ -20,7 +20,7 @@ class BooksController < ApplicationController
   def new_from_gbdb
     params[:user_ip] = request.remote_ip
     @gbook = Book.get_first_in_gbooks(params)
-    @book = Book.create({"title"=>@gbook.title, "author"=>@gbook.authors, "summary"=>@gbook.description})
+    @book = Book.create({"title"=>@gbook["title"], "author"=>@gbook["author"], "summary"=>@gbook["summary"]})
     flash[:notice] = "#{@book.title} was successfully added."
   end
   
@@ -37,5 +37,14 @@ class BooksController < ApplicationController
       flash[:warning] = "'#{params[:search_terms]}' was not found in GoogleBooks."
       redirect_to books_path
     end
+    
+  end
+  
+  def destroy
+    id = params[:id] # retrieve book ID from URI route
+    @book = Book.find(id) # look up book by unique ID
+    Book.delete(@book)
+    flash[:notice] = "#{@book.title} was successfully deleted."
+    redirect_to books_path
   end
 end

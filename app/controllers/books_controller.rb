@@ -38,4 +38,12 @@ class BooksController < ApplicationController
       redirect_to books_path
     end
   end
+  
+  def destroy
+    id = params[:id] # retrieve book ID from URI route
+    @book = Book.find(id) # look up book by unique ID
+    Book.delete(@book)
+    flash[:notice] = "#{@book.title} was successfully deleted."
+    redirect_to books_path
+  end
 end
