@@ -15,9 +15,13 @@
             %a{:href => "/"} MML
           %ul#nav
             %li
-              %a{:href => "/books"} Books
+              %a{:href => "/books"} All Books
             %li
-              %a{:href => "/reviews"} Reviews
+              %a{:href => "/user_books"} Your Books
+            %li
+              %a{:href => "/reviews"} All Reviews            
+            %li
+              %a{:href => "/user_reviews"} Reviews
           %ul#nav_minor
             %li
               - if @current_reader
@@ -25,7 +29,7 @@
                 = @current_reader.name
                 = link_to 'Log Out', logout_path
               - else
-                %a{:class => ".twitter", :href => "/auth/twitter"} Login with your Twitter account
+                %a{:class => "twitter", :href => "/auth/twitter"} Login with your Twitter account
         - if flash[:notice]
           #notice.message= flash[:notice]
         - elsif flash[:warning]

@@ -3,6 +3,11 @@ class BooksController < ApplicationController
     @books = Book.all
   end
   
+  def user
+    #@books = Book.all
+    @books = @current_reader.books
+  end
+  
   def show
     id = params[:id] # retrieve book ID from URI route
     @book = Book.find(id) # look up book by unique ID
@@ -20,8 +25,13 @@ class BooksController < ApplicationController
   end
   
   def destroy
-    Book.delete(params[:book])
-    flash[:notice] = "#{@book.title} was successfully deleted."
+    id = params[:id] # retrieve book ID from URI route
+    @book = Book.find(id) # look up book by unique ID
+    #if @book.readers > 1
+    
+    title = @book.title;
+    @book.destroy;
+    flash[:notice] = "#{title} was successfully deleted."
     redirect_to books_path
   end
 end
