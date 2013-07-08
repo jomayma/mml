@@ -11,10 +11,15 @@ Mml::Application.routes.draw do
   match 'logout' => 'sessions#destroy'
   delete '/signout', to: 'sessions#destroy', as: 'signout'
   
+<<<<<<< HEAD
   get '/reviews', to: 'reviews#all', as: 'reviews'
 
   post '/books/search_gbdb'
   
+=======
+  get '/user_reviews', to: 'reviews#user', as: 'user_reviews'
+  get '/reviews', to: 'reviews#all', as: 'reviews'
+>>>>>>> edit_and_delete
   resources :books do
     resources :reviews
   end

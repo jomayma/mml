@@ -1,5 +1,7 @@
 class Book < ActiveRecord::Base
-  has_many :reviews;
+
+  has_many :reviews
+  has_many :readers, through: :reviews
   
   def self.find_in_gbooks( params )
     books = GoogleBooks.search(params[:search_terms],{},params[:user_ip])
@@ -19,4 +21,5 @@ class Book < ActiveRecord::Base
 
     return book
   end
+
 end

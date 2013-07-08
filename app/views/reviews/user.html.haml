@@ -1,0 +1,17 @@
+-#  This file is app/views/movies/index.html.haml
+.wrapper
+  %h2 All Your Reviews
+   
+  %table#reviews{:class => "table_results"}
+    %thead
+      %tr
+        %th Book Title
+        %th Rating
+        %th Comments
+    %tbody
+      - @all_reviews.each do |review|
+        %tr 
+          %td= review.book.title
+          %td{:class => "stars_"+review.stars.to_s} 
+          %td= review.comments
+  

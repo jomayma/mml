@@ -11,6 +11,8 @@ Mml::Application.routes.draw do
   match 'logout' => 'sessions#destroy'
   delete '/signout', to: 'sessions#destroy', as: 'signout'
   
+  get '/user_books', to: 'books#user', as: 'user_books'
+  get '/user_reviews', to: 'reviews#user', as: 'user_reviews'
   get '/reviews', to: 'reviews#all', as: 'reviews'
 
   post '/books/search_gbdb'

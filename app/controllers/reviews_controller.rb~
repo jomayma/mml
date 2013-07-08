@@ -4,8 +4,18 @@ class ReviewsController < ApplicationController
     @reviews = Book.find(id).reviews
   end
   
+<<<<<<< HEAD
   def all
     @all_reviews = Review.all;
+=======
+  def user
+    #@all_reviews = Review.all
+    @all_reviews = @current_reader.reviews
+  end
+  
+  def all
+    @all_reviews = Review.all
+>>>>>>> edit_and_delete
   end
   
   def show
@@ -27,10 +37,11 @@ class ReviewsController < ApplicationController
     
     book_id = params[:book_id]
     @book = Book.find(book_id)
-    logger.debug "params[:review] | #{params[:review]}"
+    #logger.debug "params[:review] | #{params[:review]}"
     r = @book.reviews.build(params[:review])
     @current_reader.reviews << r
-    flash[:notice] = "Reviews counted: #{@book.reviews.count}"
+
+    flash[:notice] = "Reviews counted: #{@current_reader.reviews.count}"
     redirect_to book_path(@book)
   end
   
