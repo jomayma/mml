@@ -1,0 +1,17 @@
+%h1 Add New Book
+.wrapper
+  = form_tag(books_path, {:class => 'form_book'})  do
+
+    = label :book, :title, 'Title'
+    = text_field :book, 'title'
+    %br
+    
+    = label :book, :author, 'Author'
+    = text_field :book, 'author'
+    %br
+    
+    = label :book, :description, 'Summary'
+    = text_area :book, 'summary'
+    %br
+    
+    = submit_tag 'Save Changes'

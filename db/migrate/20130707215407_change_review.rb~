@@ -1,0 +1,11 @@
+class ChangeReview < ActiveRecord::Migration
+  def up
+    change_table :reviews do |t|
+      t.belongs_to :physician
+      t.belongs_to :patient
+    end
+  end
+
+  def down
+  end
+end

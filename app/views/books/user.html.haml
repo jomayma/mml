@@ -1,6 +1,6 @@
 -#  This file is app/views/movies/index.html.haml
 .wrapper
-  %h2 All Books
+  %h2 All Your Books
    
   %table#books{:class => "table_results"}
     %thead
@@ -8,16 +8,9 @@
         %th Book Title
         %th Book Author
         %th More Info
-        %th
     %tfoot
       %tr
         %td{:class => "crud_links", :colspan => 4}= link_to "Add New Book", new_book_path
-      %tr
-        %td{:class => "crud_links", :colspan => 4}
-          = form_tag :action => 'search_gbdb' do          
-            %label{:for => 'search_terms'} Add from GoogleBook
-            = text_field_tag 'search_terms'
-            = submit_tag 'Search'
     %tbody
       - @books.each do |book|
         %tr

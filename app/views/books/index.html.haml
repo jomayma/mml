@@ -11,10 +11,16 @@
     %tfoot
       %tr
         %td{:class => "crud_links", :colspan => 3}= link_to "Add New Book", new_book_path
+      %tr
+        %td{:class => "crud_links", :colspan => 3}
+          = form_tag :action => 'search_gbdb' do          
+            %label{:for => 'search_terms'} Add from GoogleBook
+            = text_field_tag 'search_terms'
+            = submit_tag 'Search'
     %tbody
       - @books.each do |book|
         %tr
           %td= book.title
           %td= book.author
-          %td= link_to "More about #{book.title}", book_path(book)
+          %td= link_to "More about #{book.title}", book_path(book) 
   

@@ -19,6 +19,8 @@ module NavigationHelpers
       '/books'
     when /^the Create New Book page$/
       '/books/new'
+    when /^the Search Results page$/
+      '/books/search_gbdb'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

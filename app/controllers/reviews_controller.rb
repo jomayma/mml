@@ -4,8 +4,13 @@ class ReviewsController < ApplicationController
     @reviews = Book.find(id).reviews
   end
   
+  def user
+    #@all_reviews = Review.all
+    @all_reviews = @current_reader.reviews
+  end
+  
   def all
-    @all_reviews = Review.all;
+    @all_reviews = Review.all
   end
   
   def show
@@ -25,6 +30,16 @@ class ReviewsController < ApplicationController
     # by using the << method on the association.  We could also
     # set it manually with review.reader = @current_user.
     
+    @book = Book.find(params[:book_id])
+    #logger.debug "params[:review] | #{params[:review]}"
+    r = @book.reviews.build(params[:review])
+    @current_reader.reviews << r
+
+    flash[:notice] = "Reviews counted: #{@current_reader.reviews.count}"
+    redirect_to book_path(@book)
+  end
+  
+  def create_from_gbdb    
     book_id = params[:book_id]
     @book = Book.find(book_id)
     logger.debug "params[:review] | #{params[:review]}"
