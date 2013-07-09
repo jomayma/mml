@@ -20,7 +20,6 @@ class ApplicationController < ActionController::Base
     #if env["REMOTE_HOST"] == "localhost"
     #  session[:user_id] = 1;
     #end
-
     return @current_reader if defined?(@current_reader)
     #@current_reader = cookies[:token] && Reader.find_by_token(cookies[:token])
     if session[:user_id]

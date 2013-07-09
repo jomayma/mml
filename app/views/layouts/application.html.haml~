@@ -21,7 +21,7 @@
             %li
               %a{:href => "/reviews"} All Reviews            
             %li
-              %a{:href => "/user_reviews"} Reviews
+              %a{:href => "/user_reviews"} Your Reviews
           %ul#nav_minor
             %li
               - if @current_reader
