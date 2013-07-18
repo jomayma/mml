@@ -1,6 +1,7 @@
 Mml::Application.routes.draw do
   get "welcome/home"
   get '/home', to: 'home#index', as: 'home'
+  get '/top_books', to: 'home#top_books', as: 'top_books'
 
   #resources :sessions
   #get '/auth/twitter/callback', to: 'sessions#create', as: 'callback'
