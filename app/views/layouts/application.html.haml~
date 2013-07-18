@@ -15,13 +15,19 @@
             %a{:href => "/"} MML
           %ul#nav
             %li
-              %a{:href => "/books"} All Books
+              %a{:href => "/top_books"} Top Rating Books
             %li
-              %a{:href => "/user_books"} Your Books
+              %a{:href => "/reviews"} All Reviews
             %li
-              %a{:href => "/reviews"} All Reviews            
+              - if @current_reader
+                %a{:href => "/user_books"} Your Books         
             %li
+<<<<<<< HEAD
               %a{:href => "/user_reviews"} Your Reviews
+=======
+              - if @current_reader
+                %a{:href => "/user_reviews"} Your Reviews
+>>>>>>> release-0.6
           %ul#nav_minor
             %li
               - if @current_reader
