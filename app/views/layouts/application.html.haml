@@ -17,11 +17,12 @@
             %li
               %a{:href => "/top_books"} Top Rating Books
             %li
-              %a{:href => "/user_books"} Your Books
-            %li
-              %a{:href => "/reviews"} All Reviews            
-            %li
-              %a{:href => "/user_reviews"} Your Reviews
+              %a{:href => "/reviews"} All Reviews
+            - if @current_reader
+              %li
+                %a{:href => "/user_books"} Your Books         
+              %li
+                %a{:href => "/user_reviews"} Your Reviews
           %ul#nav_minor
             %li
               - if @current_reader
