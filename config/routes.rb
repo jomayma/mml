@@ -18,6 +18,7 @@ Mml::Application.routes.draw do
 
   post '/books/search_gbdb'
   get '/books/new_from_gbdb'
+  get '/books/search_gbdb/:search_terms', to: 'books#search_gbdb', :as => 'search_gbdb'
   
   resources :books do
     resources :reviews
