@@ -22,8 +22,12 @@
               - if @current_reader
                 %a{:href => "/user_books"} Your Books         
             %li
+<<<<<<< HEAD
+              %a{:href => "/user_reviews"} Your Reviews
+=======
               - if @current_reader
                 %a{:href => "/user_reviews"} Your Reviews
+>>>>>>> release-0.6
           %ul#nav_minor
             %li
               - if @current_reader
