@@ -21,6 +21,8 @@ module NavigationHelpers
       '/books/new'
     when /^the Search Results page$/
       '/books/search_gbdb'
+    when /^Search On GoogleBook URL with (.*)$/
+      '/books/search_gbdb/'+$1
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
