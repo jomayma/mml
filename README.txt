@@ -1,3 +1,4 @@
+Rel. 0.6.02 - finished barcode search with a direct url
 Rel. 0.6.01 - fixing an internal server error
 Rel. 0.6 - Google search and change to profile page added to the application.
 Rel. 0.5 - Google Search feature added.
