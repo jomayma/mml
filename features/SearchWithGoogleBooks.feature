@@ -25,3 +25,8 @@ Scenario: Try to add existent book (happy path)
   And I should not see "not found"
   And I should see "Don Quijote de La Mancha"
 
+Scenario: Try to search a book direct from URL only with the barcode
+ 
+  When I go to Search On GoogleBook URL with isbn:9788467029154
+  Then I should not see "not found"
+  And I should see "El origen de las especies"
