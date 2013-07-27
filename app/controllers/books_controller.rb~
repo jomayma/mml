@@ -41,6 +41,13 @@ class BooksController < ApplicationController
       flash[:warning] = "'#{params[:search_terms]}' was not found in GoogleBooks."
       redirect_to books_path
     end
+    if @books.total_items == 1
+      book = @books.first
+      #redirect_to new_from_gbdb(:title => book.title, :isbn => book.isbn)
+      #redirect_to new_from_gbdb
+      params = {:title => book.title, :isbn => book.isbn}
+      redirect_to :action => 'new_from_gbdb', :params => params
+    end
   end
   
   def destroy
