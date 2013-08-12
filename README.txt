@@ -1,3 +1,4 @@
+Rel. 0.6.1.01 - new relic support added
 Rel. 0.6.1 - direct addition from barcode search
 Rel. 0.6.02 - finished barcode search with a direct url
 Rel. 0.6.01 - fixing an internal server error
